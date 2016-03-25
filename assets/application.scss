@@ -1,0 +1,60 @@
+---
+---
+
+@import 'bootstrap';
+@import 'fonts';
+@import 'colours';
+
+body {
+  font-family: $font-family-sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: justify;
+}
+
+pre {
+  font-family: $font-family-sans-serif;
+  background-color: black;
+  color: white;
+}
+
+$footer-height: 40px;
+
+html {
+  position: relative;
+  min-height: 100%;
+  text-transform: none;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: $footer-height;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  margin-top: $padding-large-vertical;
+  background-color: $brand-primary;
+
+  opacity: 1;
+  color: white;
+  height: $footer-height;
+
+  padding: $padding-large-vertical $padding-large-horizontal;
+
+  a {
+    color: white;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
