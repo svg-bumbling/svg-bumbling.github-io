@@ -1,7 +1,10 @@
 ---
 ---
 
-<div id='drawing'></div>
+<div id='logo' class='text-center'></div>
+<div class='text-center'>
+  Colour: #<span id='colour'></span>
+</div>
 
 <script>
 var odi_path = [
@@ -32,7 +35,7 @@ var odi_path = [
   //'z'
 ]
 
-var draw = SVG('drawing').size(700, 300)
+var draw = SVG('logo').size('600', '300')
 var logo = draw.path(odi_path.join())
 
 window.onload = function start() {
@@ -40,22 +43,14 @@ window.onload = function start() {
 }
 
 function throb() {
+  var colour = '777777'
   window.setInterval(function () {
+    colour = drift(colour)
+    $('#colour').text(colour)
     logo.fill({
-      color: randomColour()
+      color: '#' + colour
     })
-  }, 1000)
-}
-
-function tweak(colour) {
-}
-
-function randomColour() {
-  var colours = [
-    '#fa8100',
-    '#abcdef'
-  ]
-
-  return colours[Math.floor(Math.random() * colours.length)]
+  //  logo.scale(Math.random(), Math.random())
+  }, 100)
 }
 </script>

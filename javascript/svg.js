@@ -7,9 +7,9 @@ function step(value) {
   }
 
   if(Math.random() > 0.5) {
-    return (parseInt(value, 16) + 1).toString(16)
+    return String('0' + (parseInt(value, 16) + 1).toString(16)).slice(-2)
   } else {
-    return (parseInt(value, 16) - 1).toString(16)
+    return String('0' + (parseInt(value, 16) - 1).toString(16)).slice(-2)
   }
 }
 

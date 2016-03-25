@@ -32,5 +32,10 @@ describe('svg', function() {
       spyOn(Math, 'random').and.returnValue(1)
       expect(drift('ffffff')).toEqual('fffffe')
     })
+
+    it('behaves sensibly at the bottom edge', function() {
+      spyOn(Math, 'random').and.returnValue(0)
+      expect(drift('000000')).toEqual('010000')
+    })
   })
 })
