@@ -43,7 +43,7 @@ var odi_path = [
   //'z'
 ]
 
-var draw = SVG('logo').size('600', '400')
+var draw = SVG('logo').size('{{ site.data.attributes.logo.width }}', '{{ site.data.attributes.logo.height }}')
 var logo = draw.path(odi_path.join())
 
 window.onload = function start() {
@@ -51,7 +51,7 @@ window.onload = function start() {
 }
 
 function throb() {
-  var colour = '777777'
+  var colour = '{{ site.data.attributes.logo.colour }}'
   var scale = 1.0
   var rotation = 1
   window.setInterval(function () {
@@ -78,9 +78,9 @@ function throb() {
       rotation -= 1
     }
     $('#rotation').text(rotation)
-    logo.rotate(rotation)
+    logo.rotate(rotation, Math.random() * {{ site.data.attributes.logo.width }}, Math.random() * {{ site.data.attributes.logo.height }})
 
-  }, 50)
+  }, {{ site.data.attributes.interval }})
 }
 
 function step(value) {
