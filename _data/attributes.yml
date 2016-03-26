@@ -1,6 +1,6 @@
 logo:
   width: 600
   height: 400
-  colour: 777777
+  colour: fa8100
 
-interval: 50
+interval: 100
