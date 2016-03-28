@@ -53,14 +53,14 @@ describe('svg', function() {
       expect(gradient('#000000', '#ffffff', 1)).toEqual (
         [
           '#000000',
-          '#808080',
+          '#7f7f7f',
           '#ffffff',
-          '#808080'
+          '#7f7f7f'
         ]
       )
     })
 
-    it('inserts 3 steps', function() {
+  /*  it('inserts 3 steps', function() {
       expect(gradient('#000000', '#ffffff', 3)).toEqual (
         [
           '#000000',
@@ -73,7 +73,7 @@ describe('svg', function() {
           '#404040'
         ]
       )
-    })
+    })*/
 
     it('gets bytes', function() {
       expect(bytes('#abcdef')).toEqual(
@@ -83,6 +83,17 @@ describe('svg', function() {
           'ef'
         ]
       )
+    })
+
+    describe('byte_gradient', function() {
+      it('gets the simplest byte gradient', function() {
+        expect(byte_gradient('00', 'ff', 0)).toEqual (
+          [
+            '00',
+            'ff'
+          ]
+        )
+      })
     })
   })
 })

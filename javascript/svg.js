@@ -33,23 +33,25 @@ function gradient(start, end, steps) {
   start_bytes = bytes(start)
   end_bytes = bytes(end)
 
-  for(i = 0; i < steps; i++) {
-    s = ''
-    for(j = 0; j < 3; j++) {
-      s += String(Math.round((parseInt(end_bytes[j], 16) - parseInt(start_bytes[j], 16)) / (steps + 1)).toString(16)).slice(-2)
-    }
-    grad.push('#' + s)
-  }
-
+  for(i = steps; i > 0; i--) {
+s = ''
+for(j = 0; j < 3; j++) {
+  s += String(Math.round((parseInt(end_bytes[j], 16) - parseInt(start_bytes[j], 16)) / (i + 1)).toString(16)).slice(-2)
+}
+grad.push('#' + s)
+}
   grad.push(end)
 
-  for(i = steps; i > 0; i--) {
-    s = ''
-    for(j = 0; j < 3; j++) {
-      s += String(Math.round((parseInt(end_bytes[j], 16) - parseInt(start_bytes[j], 16)) / (steps + 1)).toString(16)).slice(-2)
+
+    for(i = 0; i < steps; i++) {
+      s = ''
+      for(j = 0; j < 3; j++) {
+        s += String(Math.round((parseInt(end_bytes[j], 16) - parseInt(start_bytes[j], 16)) / (i + 2)).toString(16)).slice(-2)
+      }
+      grad.push('#' + s)
     }
-    grad.push('#' + s)
-  }
+
+
 
   String(((parseInt(end_bytes[0], 16) - parseInt(start_bytes[0], 16)) / (steps + 1)).toString(16)).slice(-2)
 
@@ -58,4 +60,11 @@ function gradient(start, end, steps) {
 
 function bytes(hex) {
   return hex.split('#')[1].match(/.{2}/g)
+}
+
+function byte_gradient(start, end, steps) {
+  return [
+    start,
+    end
+  ]
 }
