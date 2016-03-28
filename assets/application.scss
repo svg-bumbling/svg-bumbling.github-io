@@ -7,6 +7,8 @@
 
 body {
   font-family: $font-family-sans-serif;
+  background-image: url(/assets/images/real_cf.png);
+  color: white;
 }
 
 h1 {
@@ -60,9 +62,6 @@ body {
 $shadow-offset: 0px;
 $shadow-size: 20px;
 $shadow: drop-shadow($shadow-offset $shadow-offset $shadow-size $brand-primary);
-
-$super-shadow-size: 23px;
-$super-shadow: drop-shadow($shadow-offset $shadow-offset $super-shadow-size $brand-primary);
 
 .glowing {
 	-webkit-filter: $shadow;
@@ -136,4 +135,8 @@ nav {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
     color: #333;
   }
+}
+
+#source {
+  padding: $padding-large-vertical;
 }
