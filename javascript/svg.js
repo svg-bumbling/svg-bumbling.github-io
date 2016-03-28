@@ -28,34 +28,23 @@ function drift(hex) {
 }
 
 function gradient(start, end, steps) {
-  grad = [start]
+  var start_bytes = bytes(start)
+  var end_bytes = bytes(end)
+  var grad = []
 
-  start_bytes = bytes(start)
-  end_bytes = bytes(end)
+  var red = byte_gradient(start_bytes[0], end_bytes[0], steps)
+  var green = byte_gradient(start_bytes[1], end_bytes[1], steps)
+  var blue = byte_gradient(start_bytes[2], end_bytes[2], steps)
 
-  for(i = steps; i > 0; i--) {
-s = ''
-for(j = 0; j < 3; j++) {
-  s += String(Math.round((parseInt(end_bytes[j], 16) - parseInt(start_bytes[j], 16)) / (i + 1)).toString(16)).slice(-2)
-}
-grad.push('#' + s)
-}
-  grad.push(end)
+  for(i = 0; i < red.length; i++) {
+    grad.push('#' + red[i] + green[i] + blue[i])
+  }
 
-
-    for(i = 0; i < steps; i++) {
-      s = ''
-      for(j = 0; j < 3; j++) {
-        s += String(Math.round((parseInt(end_bytes[j], 16) - parseInt(start_bytes[j], 16)) / (i + 2)).toString(16)).slice(-2)
-      }
-      grad.push('#' + s)
-    }
-
-
-
-  String(((parseInt(end_bytes[0], 16) - parseInt(start_bytes[0], 16)) / (steps + 1)).toString(16)).slice(-2)
-
-  return grad
+  forward = grad.slice(0)
+  forward.pop()
+  back = grad.reverse().slice(0)
+  back.pop()
+  return forward.concat(back)
 }
 
 function bytes(hex) {
@@ -79,7 +68,6 @@ function byte_gradient(start, end, steps) {
   accumulator = start_int
 
   grad = [start]
-  debugger
   while(accumulator < end_int) {
     grad.push(Math.round(accumulator += increment).toString(16))
   }

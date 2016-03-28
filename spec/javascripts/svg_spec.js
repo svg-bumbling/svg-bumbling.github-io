@@ -49,31 +49,31 @@ describe('svg', function() {
       )
     })
 
-  /*  it('inserts a single step', function() {
+    it('inserts a single step', function() {
       expect(gradient('#000000', '#ffffff', 1)).toEqual (
         [
           '#000000',
-          '#7f7f7f',
+          '#808080',
           '#ffffff',
-          '#7f7f7f'
+          '#808080'
         ]
       )
-    })*/
+    })
 
-  /*  it('inserts 3 steps', function() {
+    it('inserts 3 steps', function() {
       expect(gradient('#000000', '#ffffff', 3)).toEqual (
         [
           '#000000',
           '#404040',
           '#808080',
-          '#c0c0c0',
+          '#bfbfbf',
           '#ffffff',
-          '#c0c0c0',
+          '#bfbfbf',
           '#808080',
           '#404040'
         ]
       )
-    })*/
+    })
 
     it('gets bytes', function() {
       expect(bytes('#abcdef')).toEqual(
