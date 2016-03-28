@@ -38,4 +38,51 @@ describe('svg', function() {
       expect(drift('000000')).toEqual('010000')
     })
   })
+
+  describe('gradient', function() {
+    it('handles the simplest case', function() {
+      expect(gradient('#000000', '#ffffff', 0)).toEqual (
+        [
+          '#000000',
+          '#ffffff'
+        ]
+      )
+    })
+
+    it('inserts a single step', function() {
+      expect(gradient('#000000', '#ffffff', 1)).toEqual (
+        [
+          '#000000',
+          '#808080',
+          '#ffffff',
+          '#808080'
+        ]
+      )
+    })
+
+    it('inserts 3 steps', function() {
+      expect(gradient('#000000', '#ffffff', 3)).toEqual (
+        [
+          '#000000',
+          '#404040',
+          '#808080',
+          '#c0c0c0',
+          '#ffffff',
+          '#c0c0c0',
+          '#808080',
+          '#404040'
+        ]
+      )
+    })
+
+    it('gets bytes', function() {
+      expect(bytes('#abcdef')).toEqual(
+        [
+          'ab',
+          'cd',
+          'ef'
+        ]
+      )
+    })
+  })
 })

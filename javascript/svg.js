@@ -26,3 +26,36 @@ function drift(hex) {
 
   return bytes.join('')
 }
+
+function gradient(start, end, steps) {
+  grad = [start]
+
+  start_bytes = bytes(start)
+  end_bytes = bytes(end)
+
+  for(i = 0; i < steps; i++) {
+    s = ''
+    for(j = 0; j < 3; j++) {
+      s += String(Math.round((parseInt(end_bytes[j], 16) - parseInt(start_bytes[j], 16)) / (steps + 1)).toString(16)).slice(-2)
+    }
+    grad.push('#' + s)
+  }
+
+  grad.push(end)
+
+  for(i = steps; i > 0; i--) {
+    s = ''
+    for(j = 0; j < 3; j++) {
+      s += String(Math.round((parseInt(end_bytes[j], 16) - parseInt(start_bytes[j], 16)) / (steps + 1)).toString(16)).slice(-2)
+    }
+    grad.push('#' + s)
+  }
+
+  String(((parseInt(end_bytes[0], 16) - parseInt(start_bytes[0], 16)) / (steps + 1)).toString(16)).slice(-2)
+
+  return grad
+}
+
+function bytes(hex) {
+  return hex.split('#')[1].match(/.{2}/g)
+}
