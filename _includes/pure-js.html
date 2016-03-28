@@ -1,4 +1,7 @@
-var colour = '#fa8100'
+var odi_grad = gradient('#fa8100', '#000000', 512)
+var text_grad = gradient('#000000', '#fa8100', 512)
+
+var colour = odi_grad[0]
 var opacity = 1
 var filler = {
   color: colour,
@@ -17,7 +20,7 @@ var oh = logo.circle(200).move(0, 0).fill(filler)
 var dee = logo.path('m 190 0 h 90 c 140 5, 140 195, 0 200, h -90').fill(filler)
 var eye = logo.rect(90, 200).move(375, 0).fill(filler)
 var labs = ''
-var text = logo.text('labs').move(232, 10).fill('#ffffff')
+var text = logo.text('labs').move(232, 10).fill(text_grad[0])
 text.font({
   family: 'Helvetica Neue',
   size: 100,
@@ -34,13 +37,10 @@ window.onload = function start() {
   pulse()
 }
 
-var odi_grad = gradient('#fa8100', '#000000', 512)
-var text_grad = gradient('#ffffff', '#fa8100', 512)
-
 function pulse() {
   var colour = ''
   var index = 0
-  var interval = 10
+  var interval = 25
   window.setInterval(function () {
     text.fill(text_grad[index])
     fill_group(odi_grad[index])
