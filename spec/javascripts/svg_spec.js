@@ -114,6 +114,47 @@ describe('svg', function() {
           ]
         )
       })
+
+      it('gets a gradient that does not go to zero', function() {
+        expect(byte_gradient('30', '50', 0)).toEqual(
+          [
+            '30',
+            '50'
+          ]
+        )
+      })
+
+      it('gets a gradient with 3 steps', function() {
+        expect(byte_gradient('40', '60', 3)).toEqual(
+          [
+            '40',
+            '48',
+            '50',
+            '58',
+            '60'
+          ]
+        )
+      })
+
+      it('gets a reversed gradient with 12 steps', function() {
+        expect(byte_gradient('ee', 'dd', 12)).toEqual(
+          [
+            'ee',
+            'ed',
+            'eb',
+            'ea',
+            'e9',
+            'e7',
+            'e6',
+            'e5',
+            'e4',
+            'e2',
+            'e1',
+            'e0',
+            'de',
+            'dd' ]
+        )
+      })
     })
   })
 })
