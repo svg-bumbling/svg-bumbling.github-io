@@ -52,3 +52,19 @@ body {
     text-decoration: none;
   }
 }
+
+#canvas {
+  padding: 30px;
+}
+
+$shadow-offset: 0px;
+$shadow-size: 20px;
+$shadow: drop-shadow($shadow-offset $shadow-offset $shadow-size $brand-primary);
+
+$super-shadow-size: 23px;
+$super-shadow: drop-shadow($shadow-offset $shadow-offset $super-shadow-size $brand-primary);
+
+.glowing {
+	-webkit-filter: $shadow;
+	filter: $shadow;
+}
