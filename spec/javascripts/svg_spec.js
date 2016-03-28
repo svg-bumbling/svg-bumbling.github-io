@@ -87,10 +87,20 @@ describe('svg', function() {
 
     describe('byte_gradient', function() {
       it('gets the simplest byte gradient', function() {
-        expect(byte_gradient('00', 'ff', 0)).toEqual (
+        expect(byte_gradient('00', 'ff', 0)).toEqual(
           [
             '00',
             'ff'
+          ]
+        )
+      })
+
+      it('gets a byte gradient with 1 step', function() {
+        expect(byte_gradient('00', '20', 1)).toEqual(
+          [
+            '00',
+            '10',
+            '20'
           ]
         )
       })

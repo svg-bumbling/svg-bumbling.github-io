@@ -63,8 +63,16 @@ function bytes(hex) {
 }
 
 function byte_gradient(start, end, steps) {
-  return [
-    start,
-    end
-  ]
+  start_int = parseInt(start, 16)
+  end_int = parseInt(end, 16)
+  interval = end_int - start_int
+  increment = interval / (steps + 1)
+  accumulator = 0
+
+  grad = [start]
+  while(accumulator < end_int) {
+    grad.push((accumulator += increment).toString(16))
+  }
+
+  return grad
 }
