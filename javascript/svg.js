@@ -68,8 +68,8 @@ function byte_gradient(start, end, steps) {
   accumulator = start_int
 
   grad = [start]
-  while(accumulator < end_int) {
-    grad.push(Math.round(accumulator += increment).toString(16))
+  for(i = 0; i <= steps; i++) {
+    grad.push(String('0' + Math.round(accumulator += increment).toString(16)).slice(-2))
   }
 
   if(reversed == true) {

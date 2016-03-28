@@ -75,6 +75,23 @@ describe('svg', function() {
       )
     })
 
+    it('uderstands reversed gradients', function() {
+      expect(gradient('#fa8100', '#000000', 4)).toEqual(
+        [
+          '#fa8100',
+          '#c86700',
+          '#964d00',
+          '#643400',
+          '#321a00',
+          '#000000',
+          '#321a00',
+          '#643400',
+          '#964d00',
+          '#c86700'
+        ]
+      )
+    })
+
     it('gets bytes', function() {
       expect(bytes('#abcdef')).toEqual(
         [
@@ -152,7 +169,8 @@ describe('svg', function() {
             'e1',
             'e0',
             'de',
-            'dd' ]
+            'dd'
+          ]
         )
       })
     })
