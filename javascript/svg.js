@@ -63,8 +63,17 @@ function bytes(hex) {
 }
 
 function byte_gradient(start, end, steps) {
+  reversed = false
+  if(start > end) {
+    var tmp = start
+    start = end
+    end = tmp
+    reversed = true
+  }
+
   start_int = parseInt(start, 16)
   end_int = parseInt(end, 16)
+
   interval = end_int - start_int
   increment = interval / (steps + 1)
   accumulator = 0
@@ -72,6 +81,10 @@ function byte_gradient(start, end, steps) {
   grad = [start]
   while(accumulator < end_int) {
     grad.push((accumulator += increment).toString(16))
+  }
+
+  if(reversed == true) {
+    grad = grad.reverse()
   }
 
   return grad

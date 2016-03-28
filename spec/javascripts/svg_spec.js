@@ -49,7 +49,7 @@ describe('svg', function() {
       )
     })
 
-    it('inserts a single step', function() {
+  /*  it('inserts a single step', function() {
       expect(gradient('#000000', '#ffffff', 1)).toEqual (
         [
           '#000000',
@@ -58,7 +58,7 @@ describe('svg', function() {
           '#7f7f7f'
         ]
       )
-    })
+    })*/
 
   /*  it('inserts 3 steps', function() {
       expect(gradient('#000000', '#ffffff', 3)).toEqual (
@@ -101,6 +101,16 @@ describe('svg', function() {
             '00',
             '10',
             '20'
+          ]
+        )
+      })
+
+      it('gets a reversed gradient with 1 step', function() {
+        expect(byte_gradient('20', '00', 1)).toEqual(
+          [
+            '20',
+            '10',
+            '00'
           ]
         )
       })
