@@ -75,7 +75,7 @@ describe('svg', function() {
       )
     })
 
-    it('uderstands reversed gradients', function() {
+    it('understands reversed gradients', function() {
       expect(gradient('#fa8100', '#000000', 4)).toEqual(
         [
           '#fa8100',

@@ -40,9 +40,9 @@ function gradient(start, end, steps) {
     grad.push('#' + red[i] + green[i] + blue[i])
   }
 
-  forward = grad.slice(0)
+  var forward = grad.slice(0)
   forward.pop()
-  back = grad.reverse().slice(0)
+  var back = grad.reverse().slice(0)
   back.pop()
   return forward.concat(back)
 }
@@ -52,7 +52,7 @@ function bytes(hex) {
 }
 
 function byte_gradient(start, end, steps) {
-  reversed = false
+  var reversed = false
   if(start > end) {
     var tmp = start
     start = end
@@ -60,14 +60,14 @@ function byte_gradient(start, end, steps) {
     reversed = true
   }
 
-  start_int = parseInt(start, 16)
-  end_int = parseInt(end, 16)
+  var start_int = parseInt(start, 16)
+  var end_int = parseInt(end, 16)
 
-  interval = end_int - start_int
-  increment = interval / (steps + 1)
-  accumulator = start_int
+  var interval = end_int - start_int
+  var increment = interval / (steps + 1)
+  var accumulator = start_int
 
-  grad = [start]
+  var grad = [start]
   for(i = 0; i <= steps; i++) {
     grad.push(String('0' + Math.round(accumulator += increment).toString(16)).slice(-2))
   }

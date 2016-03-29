@@ -1,5 +1,7 @@
+{% include paths/odi.html %}
+
 var odi_grad = gradient('#fa8100', '#000000', 512)
-var text_grad = gradient('#000000', '#ffffff', 512)
+var text_grad = gradient('#ffffff', '#fa8100', 512)
 
 var colour = odi_grad[0]
 var opacity = 1
@@ -12,25 +14,25 @@ var logo = SVG('canvas')
 logo.viewbox({
   x: 0,
   y: 0,
-  width: 465,
-  height: 200
+  width: 467,
+  height: 202
 })
 
-var oh = logo.circle(200).move(0, 0).fill(filler)
-var dee = logo.path('m 190 0 h 90 c 140 5, 140 195, 0 200, h -90').fill(filler)
-var eye = logo.rect(90, 200).move(375, 0).fill(filler)
-var labs = ''
+var badge = logo.path(odi_path.join(' ')).fill(colour)
+var odi = logo.group()
+odi.add(badge)
+
 var text = logo.text('labs').move(232, 10).fill(text_grad[0])
 text.font({
   family: 'Helvetica Neue',
   size: 100,
   anchor: 'middle'
 })
+var image = logo.image('https://dreamscope-prod-v1.s3.amazonaws.com/images/80796377-c28c-46ca-b3a6-237c1a7c4c60.jpeg')
+image.size(650, 650).y(-150).x(-100)
+image.clipWith(text)
 
-var odi = logo.group()
-odi.add(oh)
-odi.add(dee)
-odi.add(eye)
+// adding the text to the group destroys the clipping :/
 odi.add(text)
 
 window.onload = function start() {
@@ -42,16 +44,10 @@ function pulse() {
   var interval = 25
   window.setInterval(function () {
     text.fill(text_grad[index])
-    fill_group(odi_grad[index])
+    badge.fill(odi_grad[index])
     index += 1
     if(index == odi_grad.length) {
       index = 0
     }
   }, interval)
-}
-
-function fill_group(colour) {
-  oh.fill(colour)
-  dee.fill(colour)
-  eye.fill(colour)
 }
