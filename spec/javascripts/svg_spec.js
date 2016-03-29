@@ -174,5 +174,39 @@ describe('svg', function() {
         )
       })
     })
+
+    describe('straight_steps', function() {
+      it('returns evenly-spaced steps', function() {
+        expect(straight_steps(8, 0)).toEqual(
+          [ 8 ]
+        )
+
+        expect(straight_steps(8, 1)).toEqual(
+          [ 4, 4 ]
+        )
+
+        expect(straight_steps(8, 3)).toEqual(
+          [ 2, 2, 2, 2 ]
+        )
+
+        expect(straight_steps(11, 3)).toEqual(
+          [ 2.75, 2.75, 2.75, 2.75 ]
+        )
+      })
+    })
+
+    describe('sinusoidal_steps', function() {
+      it('gets the simplest step set', function() {
+        expect(sinusoidal_steps(32, 0)).toEqual(
+          [ 32 ]
+        )
+      })
+
+      it('gets a slightly more complex set', function() {
+        expect(sinusoidal_steps(32, 1)).toEqual(
+          [ 16, 16 ]
+        )
+      })
+    })
   })
 })

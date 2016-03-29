@@ -51,7 +51,11 @@ function bytes(hex) {
   return hex.split('#')[1].match(/.{2}/g)
 }
 
-function byte_gradient(start, end, steps) {
+function byte_gradient(start, end, steps, type) {
+  if(type === undefined) {
+    type = 'straight'
+  }
+
   var reversed = false
   if(start > end) {
     var tmp = start
@@ -64,12 +68,17 @@ function byte_gradient(start, end, steps) {
   var end_int = parseInt(end, 16)
 
   var interval = end_int - start_int
+
+  switch(type) {
+    case 'straight':
+      var step_set = straight_steps(interval, steps)
+  }
+
   var increment = interval / (steps + 1)
   var accumulator = start_int
-
   var grad = [start]
   for(i = 0; i <= steps; i++) {
-    grad.push(String('0' + Math.round(accumulator += increment).toString(16)).slice(-2))
+    grad.push(String('0' + Math.round(accumulator += step_set[i]).toString(16)).slice(-2))
   }
 
   if(reversed == true) {
@@ -77,4 +86,26 @@ function byte_gradient(start, end, steps) {
   }
 
   return grad
+}
+
+function straight_steps(interval, steps) {
+  var s = []
+  var increment = interval / (steps + 1)
+  for(i = 0; i <= steps; i++) {
+    s.push(increment)
+  }
+
+  return s
+}
+
+function sinusoidal_steps(interval, steps) {
+  var straight = straight_steps(interval, steps)
+  var inc = Math.PI / straight.length
+
+  var s = []
+  for(i = 1; i < straight.length; i++) {
+    s.push(Math.sin(i * inc) * (interval / (steps + 1)))
+  }
+
+  return s.concat(s.reverse())
 }
