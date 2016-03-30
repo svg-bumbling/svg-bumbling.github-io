@@ -8,3 +8,9 @@
     <li><a href='{{ item.path }}'>{{ item.name }}</a></li>
   {% endfor %}
 </ul>
+
+<div id='canvas' style='height: 200px;'></div>
+
+<script>
+{% include javascript/glowing-logo.js %}
+</script>
