@@ -1,21 +1,10 @@
 ---
-items:
-  - name: Plain logo
-    path: /plain-logo
-  - name: Glowing logo
-    path: /glowing-logo
-  - name: Logo with word
-    path: /logo-with-word?word=wtf?
-  - name: Logo with image
-    path: /logo-clipped-image
-  - name: Pulsing logo
-    path: /pulsing-logo
 ---
 
-<h1>Dicking about with SVGs</h1>
+<h1>Fun times with SVGs</h1>
 
 <ul>
-  {% for item in page.items %}
+  {% for item in site.data.navigation %}
     <li><a href='{{ item.path }}'>{{ item.name }}</a></li>
   {% endfor %}
 </ul>

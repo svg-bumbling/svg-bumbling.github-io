@@ -8,3 +8,5 @@
   path: /logo-clipped-image
 - name: Pulsing logo
   path: /pulsing-logo
+- name: Moving logo
+  path: /moving-logo
