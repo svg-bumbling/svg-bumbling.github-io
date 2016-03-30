@@ -1,8 +1,11 @@
 ---
+items:
+  - name: Plain logo
+    path: /plain-logo
 ---
 
 <ul>
-  <li><a href='rotate'>Rotating logo</a></li>
-  <li><a href='pure-javascript'>Pure JavaScript logo</a></li>
-  <li><a href='custom-word'>Customise the word</a></li>
+  {% for item in page.items %}
+    <a href='{{ item.path }}'>{{ item.name }}</a>
+  {% endfor %}
 </ul>
