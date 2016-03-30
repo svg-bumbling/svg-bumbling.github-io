@@ -2,10 +2,14 @@
 items:
   - name: Plain logo
     path: /plain-logo
+  - name: Glowing logo
+    path: /glowing-logo
 ---
+
+<h1>Dicking about with SVGs</h1>
 
 <ul>
   {% for item in page.items %}
-    <a href='{{ item.path }}'>{{ item.name }}</a>
+    <li><a href='{{ item.path }}'>{{ item.name }}</a></li>
   {% endfor %}
 </ul>
