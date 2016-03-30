@@ -1,0 +1,34 @@
+---
+---
+
+<div id='canvas'></div>
+
+<div class='text-center'>
+<button class='btn btn-source'
+        type='button'
+        data-toggle='modal'
+        data-target='#source'
+        aria-expanded='false'
+        aria-controls='source'>
+  JavaScript source
+</button>
+</div>
+
+<!-- Modal -->
+<div class='modal' id='source' tabindex='-1' role='dialog' aria-labelledby='source-label' aria-hidden='true'>
+  <div class='modal-dialog'>
+    <div class='modal-content'>
+      <div class='modal-body'>
+        <pre id='source'>{% include javascript/kosher-logo.js %}</pre>
+
+        <button type='button' class='btn btn-source pull-right' data-dismiss='modal' aria-label='Close'>
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+{% include javascript/kosher-logo.js %}
+</script>

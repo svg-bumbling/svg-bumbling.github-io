@@ -1,3 +1,6 @@
+defaults:
+  colour: '#fa8100'
+
 logo:
   width: 600
   height: 400

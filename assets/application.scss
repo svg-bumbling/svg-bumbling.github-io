@@ -56,8 +56,23 @@ body {
 }
 
 #canvas {
-  padding: 30px;
-  margin: 30px;
+  padding: $padding-large-horizontal;
+  margin: $padding-large-horizontal;
+}
+
+.btn-source {
+  background-color: $brand-primary;
+  margin-bottom: $padding-large-vertical;
+}
+
+pre {
+  color: $brand-primary;
+  background-color: black;
+  font-family: $font-family-fixed;
+}
+
+.modal-content {
+  background-color: black;
 }
 
 $shadow-offset: 0px;
