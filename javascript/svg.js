@@ -27,14 +27,18 @@ function drift(hex) {
   return bytes.join('')
 }
 
-function gradient(start, end, steps) {
+function gradient(start, end, steps, type) {
+  if(type === undefined) {
+    type = 'straight'
+  }
+
   var start_bytes = bytes(start)
   var end_bytes = bytes(end)
   var grad = []
 
-  var red = byte_gradient(start_bytes[0], end_bytes[0], steps)
-  var green = byte_gradient(start_bytes[1], end_bytes[1], steps)
-  var blue = byte_gradient(start_bytes[2], end_bytes[2], steps)
+  var red = byte_gradient(start_bytes[0], end_bytes[0], steps, type)
+  var green = byte_gradient(start_bytes[1], end_bytes[1], steps, type)
+  var blue = byte_gradient(start_bytes[2], end_bytes[2], steps, type)
 
   for(i = 0; i < red.length; i++) {
     grad.push('#' + red[i] + green[i] + blue[i])
@@ -70,7 +74,10 @@ function byte_gradient(start, end, steps, type) {
   var interval = end_int - start_int
 
   switch(type) {
-    case 'straight':
+    case 'sinusoidal':
+      var step_set = sinusoidal_steps(interval, steps)
+      break;
+    default:
       var step_set = straight_steps(interval, steps)
   }
 
@@ -99,13 +106,23 @@ function straight_steps(interval, steps) {
 }
 
 function sinusoidal_steps(interval, steps) {
-  var straight = straight_steps(interval, steps)
-  var inc = Math.PI / straight.length
-
-  var s = []
-  for(i = 1; i < straight.length; i++) {
-    s.push(Math.sin(i * inc) * (interval / (steps + 1)))
+  var rotation = 1 / (steps + 1)
+  var cosines = []
+  var angle = 1
+  while(angle >= 0) {
+    var cosine = (Math.cos(angle * Math.PI) + 1) / 2
+    cosines.push(cosine)
+    angle -= rotation
   }
 
-  return s.concat(s.reverse())
+  var s = []
+  for(i = 1; i < cosines.length; i++) {
+    s.push(rounder((cosines[i] - cosines[i - 1]) * interval))
+  }
+
+  return s
+}
+
+function rounder(value) {
+  return Math.round(value * 100) / 100
 }

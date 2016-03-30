@@ -207,6 +207,84 @@ describe('svg', function() {
           [ 16, 16 ]
         )
       })
+
+      it('deals with actual sines', function() {
+        expect(sinusoidal_steps(1, 1)).toEqual(
+          [
+            0.5,
+            0.5
+          ]
+        )
+      })
+
+      it('deals with scaled sines', function() {
+        expect(sinusoidal_steps(2, 1)).toEqual(
+          [
+            1,
+            1
+          ]
+        )
+      })
+
+      it('handles more steps', function() {
+        expect(sinusoidal_steps(1, 3)).toEqual(
+          [
+            0.15,
+            0.35,
+            0.35,
+            0.15
+          ]
+        )
+      })
+
+      it('handles an even number of steps', function() {
+        expect(sinusoidal_steps(1, 4)).toEqual(
+          [
+            0.1,
+            0.25,
+            0.31,
+            0.25,
+            0.1
+          ]
+        )
+      })
+
+      it('handles an even number of steps with scale', function() {
+        expect(sinusoidal_steps(7, 6)).toEqual(
+          [
+            0.35,
+            0.97,
+            1.4,
+            1.56,
+            1.4,
+            0.97,
+            0.35
+          ]
+        )
+      })
+
+      it('gets actual sinusoidal hex gradients', function() {
+        expect(gradient('#fa8100', '#000000', 4, 'sinusoidal')).toEqual(
+          [
+            '#fa8100',
+            '#e27500',
+            '#a45400',
+            '#562d00',
+            '#180c00',
+            '#000000',
+            '#180c00',
+            '#562d00',
+            '#a45400',
+            '#e27500'
+          ]
+        )
+      })
+
+      it('rounds things sanely', function() {
+        expect(rounder(1.32431243214)).toEqual(
+          1.32
+        )
+      })
     })
   })
 })
