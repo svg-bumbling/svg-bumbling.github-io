@@ -5,7 +5,9 @@
 
 <ul>
   {% for item in site.data.navigation %}
-    <li><a href='{{ item.path }}'>{{ item.name }}</a></li>
+    {% for subitem in item.items %}
+      <li><a href='{{ subitem.path }}'>{{ subitem.name }}</a></li>
+    {% endfor %}
   {% endfor %}
 </ul>
 

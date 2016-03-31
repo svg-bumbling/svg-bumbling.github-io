@@ -46,3 +46,8 @@ $shadow: drop-shadow($shadow-offset $shadow-offset $shadow-size $brand-primary);
 	-webkit-filter: $shadow;
 	filter: $shadow;
 }
+
+.dropdown-menu {
+  background-color: $brand-primary;
+  color: white;
+}

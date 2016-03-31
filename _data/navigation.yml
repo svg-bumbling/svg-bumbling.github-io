@@ -1,16 +1,21 @@
-- name: Plain logo
-  path: /plain-logo
-- name: Glowing logo
-  path: /glowing-logo
-- name: Logo with word
-  path: /logo-with-word?word=wtf?
-- name: Logo with image
-  path: /logo-clipped-image
-- name: Pulsing logo
-  path: /pulsing-logo
-- name: Moving logo
-  path: /moving-logo?word=rotate
+- name: Logo
+  items:
+    - name: Plain logo
+      path: /plain-logo
+    - name: Glowing logo
+      path: /glowing-logo
+    - name: Logo with word
+      path: /logo-with-word?word=wtf?
+    - name: Logo with image
+      path: /logo-clipped-image
+    - name: Pulsing logo
+      path: /pulsing-logo
+    - name: Moving logo
+      path: /moving-logo?word=rotate
+
 - name: Rosette
-  path: /rosette?word=partner
-- name: Glowing rosette
-  path: /glowing-rosette?word=supporter
+  items:
+    - name: Plain Rosette
+      path: /rosette?word=partner
+    - name: Glowing rosette
+      path: /glowing-rosette?word=supporter
