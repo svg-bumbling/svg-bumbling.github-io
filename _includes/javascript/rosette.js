@@ -18,7 +18,7 @@ var banner = logo.path(rosette_paths['banner'].join(' ')).fill(alt_colour)
 
 var text = logo.text(word.toUpperCase()).move(97, 125).fill(colour)
 text.font({
-  family: 'Share Tech Mono',
+  family: 'Helvetica-Condensed-Thin',
   size: 30,
   anchor: 'middle'
 })
