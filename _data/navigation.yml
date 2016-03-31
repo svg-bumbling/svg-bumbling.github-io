@@ -12,3 +12,5 @@
   path: /moving-logo?word=rotate
 - name: Rosette
   path: /rosette?word=partner
+- name: Glowing rosette
+  path: /glowing-rosette?word=supporter

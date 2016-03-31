@@ -20,14 +20,7 @@
     <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
       <ul class='nav navbar-nav'>
         {% for item in site.data.navigation %}
-          {% if item.path == page.url %}
-            <li class='active'>
-          {% elsif item.path contains page.parent %}
-            <li class='active'>
-          {% else %}
-            <li>
-          {% endif %}
-          <a href='{{ item.path }}'>{{ item.name }}</a></li>
+          <li><a href='{{ item.path }}'>{{ item.name }}</a></li>
         {% endfor %}
       </ul>
     </div><!-- /.navbar-collapse -->
