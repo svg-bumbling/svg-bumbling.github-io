@@ -1,16 +1,22 @@
 ---
 ---
 
-<h1>Fun times with SVGs</h1>
+<h1>SVG experiments</h1>
 
-{% for item in site.data.navigation %}
-  <h2>{{ item.name }}</h2>
-  <ul>
-    {% for subitem in item.items %}
-      <li><a href='{{ subitem.path }}'>{{ subitem.name }}</a></li>
-    {% endfor %}
-  </ul>
-{% endfor %}
+<div class='row'>
+
+  {% for item in site.data.navigation %}
+    <div class='col-md-4'>
+      <h2>{{ item.name }}</h2>
+      <ul>
+        {% for subitem in item.items %}
+          <li><a href='{{ subitem.path }}'>{{ subitem.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+
+</div>
 
 <div id='canvas' style='height: 200px;'></div>
 
