@@ -10,6 +10,6 @@ logo.viewbox({
   height: 170
 })
 
-$('#canvas')
-var outer = logo.path(rosette_paths[0].join(' ')).fill(colour)
-//var outer = logo.path(rosette_paths[1]).fill(other_colour)
+var outer = logo.path(rosette_paths['outline'].join(' ')).fill(colour)
+var odi = logo.path(rosette_paths['odi'].join(' ')).fill(other_colour)
+var banner = logo.path(rosette_paths['banner'].join(' ')).fill(other_colour)
