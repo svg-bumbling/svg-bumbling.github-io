@@ -1,7 +1,7 @@
 {% include paths/rosette.js %}
 
 var colour = '{{ site.data.attributes.defaults.colour }}'
-var other_colour = '{{ site.data.attributes.defaults.text_colour }}'
+var alt_colour = '{{ site.data.attributes.defaults.alt-colour }}'
 var logo = SVG('canvas')
 logo.viewbox({
   x: 0,
@@ -11,5 +11,14 @@ logo.viewbox({
 })
 
 var outer = logo.path(rosette_paths['outline'].join(' ')).fill(colour)
-var odi = logo.path(rosette_paths['odi'].join(' ')).fill(other_colour)
-var banner = logo.path(rosette_paths['banner'].join(' ')).fill(other_colour)
+var odi = logo.path(rosette_paths['odi'].join(' ')).fill(alt_colour)
+var banner = logo.path(rosette_paths['banner'].join(' ')).fill(alt_colour)
+
+{% include javascript/common/get-word.js %}
+
+var text = logo.text(word.toUpperCase()).move(97, 125).fill(colour)
+text.font({
+  family: 'Share Tech Mono',
+  size: 30,
+  anchor: 'middle'
+})

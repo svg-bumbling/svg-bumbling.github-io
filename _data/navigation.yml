@@ -10,3 +10,5 @@
   path: /pulsing-logo
 - name: Moving logo
   path: /moving-logo?word=rotate
+- name: Rosette
+  path: /rosette?word=partner
