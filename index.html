@@ -3,13 +3,14 @@
 
 <h1>Fun times with SVGs</h1>
 
-<ul>
-  {% for item in site.data.navigation %}
+{% for item in site.data.navigation %}
+  <h2>{{ item.name }}</h2>
+  <ul>
     {% for subitem in item.items %}
       <li><a href='{{ subitem.path }}'>{{ subitem.name }}</a></li>
     {% endfor %}
-  {% endfor %}
-</ul>
+  </ul>
+{% endfor %}
 
 <div id='canvas' style='height: 200px;'></div>
 
