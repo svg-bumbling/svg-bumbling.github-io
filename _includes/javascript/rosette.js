@@ -16,7 +16,7 @@ var banner = logo.path(rosette_paths['banner'].join(' ')).fill(alt_colour)
 
 {% include javascript/common/get-word.js %}
 
-var text = logo.text(word.toUpperCase()).move(97, 125).fill(colour)
+var text = logo.text(word.toUpperCase()).move(99, 125).fill(colour)
 text.font({
   family: 'Helvetica-Condensed',
   size: 30,
