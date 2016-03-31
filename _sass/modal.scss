@@ -1,0 +1,14 @@
+pre {
+  color: $brand-primary;
+  background-color: black;
+  font-family: $font-family-fixed;
+  border: 2px $brand-primary solid;
+}
+
+.modal-content {
+  background-color: black;
+}
+
+#source {
+  padding: $padding-large-vertical;
+}
