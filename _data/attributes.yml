@@ -1,6 +1,7 @@
 defaults:
   colour: '#fa8100'
   alt-colour: '#7d4000'
+  third-color: '#d9b71e'
 
 logo:
   width: 600

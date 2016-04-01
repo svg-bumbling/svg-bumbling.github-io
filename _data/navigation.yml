@@ -23,6 +23,8 @@
       path: /logo/startup
     - name: Mentors
       path: /logo/mentors
+    - name: Registered trainer
+      path: /logo/registered-trainer
 
 - name: Rosette
   items:

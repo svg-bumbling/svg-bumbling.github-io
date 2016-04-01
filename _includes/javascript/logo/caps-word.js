@@ -2,10 +2,10 @@
 
 {% include javascript/common/get-word.js %}
 
-var text = logo.text(word.toUpperCase()).move(232, 10).fill('{{ site.data.attributes.defaults.alt-colour }}')
+var text = logo.text(word.toUpperCase()).move(232, 30).fill('{{ site.data.attributes.defaults.alt-colour }}')
 text.font({
   family: 'Helvetica-Condensed',
-  size: 105,
+  size: 85,
   anchor: 'middle',
   weight: 'bold'
 })
