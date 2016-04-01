@@ -19,10 +19,10 @@
 
 - name: Custom logo
   items:
-    - name: With name
-      path: /logo/with-name
-    - name: With name outside
-      path: /logo/with-name-outside
+    - name: Wordmark
+      path: /logo/wordmark
+    - name: Wordmark outside
+      path: /logo/wordmark-outside
     - name: Node
       path: /logo/node
     - name: Startup
