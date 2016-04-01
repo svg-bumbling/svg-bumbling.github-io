@@ -21,5 +21,6 @@ text.font({
   family: 'Helvetica-Condensed',
   size: 30,
   anchor: 'middle',
-  weight: 'bold'
+  weight: 'bold',
+  'letter-spacing': 2
 })

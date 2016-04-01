@@ -14,8 +14,13 @@
       path: /pulsing-logo
     - name: Moving logo
       path: /moving-logo?word=rotate
+
+- name: Custom logo
+  items:
     - name: Node logo
       path: /node-logo
+    - name: Startup logo
+      path: /startup-logo
 
 - name: Rosette
   items:
