@@ -20,5 +20,6 @@ var text = logo.text(word.toUpperCase()).move(99, 125).fill(colour)
 text.font({
   family: 'Helvetica-Condensed',
   size: 30,
-  anchor: 'middle'
+  anchor: 'middle',
+  weight: 'bold'
 })

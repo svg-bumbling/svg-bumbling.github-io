@@ -6,5 +6,6 @@ var text = logo.text(word.toUpperCase()).move(232, 10).fill('{{ site.data.attrib
 text.font({
   family: 'Helvetica-Condensed',
   size: 105,
-  anchor: 'middle'
+  anchor: 'middle',
+  weight: 'bold'
 })
