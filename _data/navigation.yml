@@ -4,8 +4,10 @@
       path: /plain-logo
     - name: Glowing logo
       path: /glowing-logo
-    - name: Logo with word
+    - name: Logo with word (Labs-style)
       path: /logo-with-word?word=wtf?
+    - name: Logo with caps word (Trainer-style)
+      path: /logo-with-caps-word?word=trainer
     - name: Logo with image
       path: /logo-clipped-image
     - name: Pulsing logo
