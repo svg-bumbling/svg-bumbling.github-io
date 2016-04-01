@@ -1,4 +1,4 @@
-{% include javascript/glowing-logo.js %}
+{% include javascript/logo/glowing.js %}
 
 var image = logo.image('https://farm2.staticflickr.com/1446/25137519363_368d730c65_h.jpg')
 image.size(650, 650).y(-180).x(-80)

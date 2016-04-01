@@ -1,4 +1,4 @@
-{% include javascript/glowing-logo.js %}
+{% include javascript/logo/glowing.js %}
 
 var odi_grad = gradient('#fa8100', '#000000', 128)
 var text_grad = gradient('#ffffff', '#fa8100', 128)

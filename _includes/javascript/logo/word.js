@@ -1,4 +1,4 @@
-{% include javascript/glowing-logo.js %}
+{% include javascript/logo/glowing.js %}
 
 {% include javascript/common/get-word.js %}
 

@@ -1,32 +1,32 @@
 - name: Logo
   items:
-    - name: Plain logo
-      path: /plain-logo
-    - name: Glowing logo
-      path: /glowing-logo
-    - name: Logo with word (Labs-style)
-      path: /logo-with-word?word=wtf?
-    - name: Logo with caps word (Trainer-style)
-      path: /logo-with-caps-word?word=trainer
-    - name: Logo with image
-      path: /logo-clipped-image
-    - name: Pulsing logo
-      path: /pulsing-logo
-    - name: Moving logo
-      path: /moving-logo?word=rotate
+    - name: Plain
+      path: /logo/plain
+    - name: Glowing
+      path: /logo/glowing
+    - name: With word (Labs-style)
+      path: /logo/word?word=wtf?
+    - name: With caps word (Trainer-style)
+      path: /logo/caps-word?word=trainer
+    - name: With image
+      path: /logo/image
+    - name: Pulsing
+      path: /logo/pulsing
+    - name: Moving
+      path: /logo/moving?word=rotate
 
 - name: Custom logo
   items:
-    - name: Node logo
-      path: /node-logo
-    - name: Startup logo
-      path: /startup-logo
-    - name: Mentors logo
-      path: /mentors-logo
+    - name: Node
+      path: /logo/node
+    - name: Startup
+      path: /logo/startup
+    - name: Mentors
+      path: /logo/mentors
 
 - name: Rosette
   items:
     - name: Plain Rosette
-      path: /rosette?word=partner
+      path: /rosette/plain?word=partner
     - name: Glowing rosette
-      path: /glowing-rosette?word=supporter
+      path: /rosette/glowing?word=supporter

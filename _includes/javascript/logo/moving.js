@@ -1,4 +1,4 @@
-{% include javascript/logo-with-word.js %}
+{% include javascript/logo/word.js %}
 
 var group = logo.group()
 group.add(badge)
