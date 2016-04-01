@@ -21,6 +21,8 @@
       path: /node-logo
     - name: Startup logo
       path: /startup-logo
+    - name: Mentors logo
+      path: /mentors-logo
 
 - name: Rosette
   items:
