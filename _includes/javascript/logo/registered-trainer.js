@@ -21,5 +21,5 @@ var registered = logo.text('REGISTERED').move(384, 164).fill('{{ site.data.attri
 registered.font({
   family: 'Helvetica-Condensed',
   size: 30,
-  anchor: 'middle',
+  anchor: 'middle'
 })
