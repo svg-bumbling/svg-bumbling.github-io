@@ -5,7 +5,9 @@
     - name: Glowing
       path: /logo/glowing
     - name: With word (Labs-style)
-      path: /logo/word?word=wtf?
+      path: /logo/word?word=labs
+    - name: With word outside (Labs-style)
+      path: /logo/word-outside?word=labs
     - name: With caps word (Trainer-style)
       path: /logo/caps-word?word=trainer
     - name: With image

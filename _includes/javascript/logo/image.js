@@ -8,5 +8,6 @@ var text = logo.text('snake').move(232, 10).fill('{{ site.data.attributes.defaul
 text.font({
   family: 'Helvetica Neue',
   size: 100,
-  anchor: 'middle'
+  anchor: 'middle',
+  weight: 200
 })

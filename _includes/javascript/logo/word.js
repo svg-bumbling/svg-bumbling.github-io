@@ -6,5 +6,6 @@ var text = logo.text(word).move(232, 10).fill('{{ site.data.attributes.defaults.
 text.font({
   family: 'Helvetica Neue',
   size: 100,
-  anchor: 'middle'
+  anchor: 'middle',
+  weight: 200
 })
