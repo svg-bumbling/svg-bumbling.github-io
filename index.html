@@ -4,10 +4,10 @@
 <h1>SVG experiments</h1>
 
 <div class='row'>
-  <div class='col-md-3'></div>
+  <div class='col-md-2'></div>
 
   {% for item in site.data.navigation %}
-    <div class='col-md-2'>
+    <div class='col-md-3'>
       <h2>{{ item.name }}</h2>
       <ul>
         {% for subitem in item.items %}
@@ -17,11 +17,11 @@
     </div>
   {% endfor %}
 
-  <div class='col-md-3'></div>
+  <div class='col-md-1'></div>
 </div>
 
 <div id='canvas' style='height: 200px;'></div>
 
 <script>
-{% include javascript/logo/word.js word = 'svg' %}
+{% include javascript/logo/with-name-outside.js %}
 </script>
