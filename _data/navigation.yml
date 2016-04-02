@@ -23,6 +23,8 @@
       path: /logo/wordmark
     - name: Wordmark outside
       path: /logo/wordmark-outside
+    - name: Strapline
+      path: /logo/strapline
     - name: Node
       path: /logo/node
     - name: Startup
