@@ -15,7 +15,7 @@
     - name: Pulsing
       path: /logo/pulsing
     - name: Moving
-      path: /logo/moving?word=rotate
+      path: /logo/moving?word=owl
 
 - name: Custom logo
   items:

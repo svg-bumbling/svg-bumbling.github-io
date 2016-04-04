@@ -14,9 +14,9 @@ function move() {
   window.setInterval(function () {
     rotation_rand = Math.random()
     if(rotation_rand > 0.5) {
-      rotation += 10
+      rotation += 50
     } else if (rotation_rand < 0.5) {
-      rotation -= 10
+      rotation -= 50
     }
     group.animate().rotate(rotation)
   }, 10 )
