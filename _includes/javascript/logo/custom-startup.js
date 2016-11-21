@@ -3,13 +3,17 @@
 var colour = '{{ site.data.attributes.defaults.colour }}'
 var alt_colour = '{{ site.data.attributes.defaults.alt-colour }}'
 
-var alt_colour = '#000000'
-var colour = '#ffffff'
+var text = getUrlVars()['text']
+var colour = getUrlVars()['background']
+var alt_colour = getUrlVars()['foreground']
 
-var first = getUrlVars()['first']
-var second = getUrlVars()['second']
-//var colour = getUrlVars()['primary']
-//var alt_colour = getUrlVars()['secondary']
+if (colour == undefined) {
+  colour = '#ffffff'
+}
+
+if (alt_colour == undefined) {
+  alt_colour = '#000000'
+}
 
 var logo = SVG('canvas')
 logo.viewbox({
@@ -22,7 +26,7 @@ var border = logo.path(odi_path.join(' ')).stroke({color: colour, width: 40})
 var margin = logo.path(odi_path.join(' ')).stroke({color: alt_colour, width: 33})
 var badge = logo.path(odi_path.join(' ')).fill({color: colour})
 
-var text = logo.text(first + ' ' + second).move(238, 60).fill(alt_colour)
+var text = logo.text(text.replace(/_/g, ' ')).move(238, 60).fill(alt_colour)
 
 text.font({
   family: 'Helvetica-Condensed',
